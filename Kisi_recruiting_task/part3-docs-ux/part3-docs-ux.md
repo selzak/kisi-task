@@ -25,16 +25,17 @@ Integrating Kisi with Legacy Hardware means you can modernize access control wit
 
 ```mermaid
 flowchart TD
-  subgraph ScenarioA[Scenario A: Legacy Reader + Kisi Reader]
-    A1[User taps legacy reader] --> A2[Wiegand Board (READER)]
-    A2 --> A3[Kisi Controller]
-    A3 --> A4[Relay unlocks door]
+  subgraph ScenarioA[Legacy Reader + Kisi Reader]
+    A1["User taps legacy reader"] --> A2["Wiegand Board\nREADER mode"]
+    A2 --> A3["Kisi Controller"]
+    A3 --> A4["Relay unlocks door"]
   end
 
-  subgraph ScenarioB[Scenario B: Legacy Controller + Kisi Controller]
-    B1[User taps legacy reader] --> B2[Wiegand Board (READER)]
-    B2 --> B3[Kisi Controller]
-    B3 --> B4[Wiegand Board (CONTRL)]
-    B4 --> B5[Legacy Controller]
-    B5 --> B6[Door unlock]
+  subgraph ScenarioB[Legacy Controller + Kisi Controller]
+    B1["User taps legacy reader"] --> B2["Wiegand Board\nREADER mode"]
+    B2 --> B3["Kisi Controller"]
+    B3 --> B4["Wiegand Board\nCONTRL mode"]
+    B4 --> B5["Legacy Controller"]
+    B5 --> B6["Door unlock"]
   end
+
